@@ -20,7 +20,7 @@ const patchPromise = (url, data) => {
 const postPromise = (url, data) => {
   return new Promise((resolve, reject) => {
     axios
-      .post(baseUrl + `${url}`, data)
+      .post(`${baseUrl}${url}`, data)
       .then(response => resolve(response.data))
       .catch(error => reject(error));
   });
