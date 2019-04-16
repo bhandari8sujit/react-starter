@@ -9,9 +9,18 @@
         }
       ],
       "prettier/prettier": "error",
-      "max-len": ["error", 80]
+      "max-len": ["error", 120]
     },
+    "overrides": [
+        {
+          "files": ["*-test.js","*.spec.js"],
+          "rules": {
+            "no-unused-expressions": "off"
+          }
+        }
+    ],
     "env": {
+      "es6": true,
       "browser": true
     },
     "settings": {

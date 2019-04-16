@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, Icon, Input, Button, Checkbox, Row, Col } from 'antd';
 import { Link } from 'react-router-dom';
-import Auth from '../services/auth';
+import Auth from '../../services/auth';
 
 export default class Login extends React.Component {
   constructor(props) {
@@ -19,7 +19,7 @@ export default class Login extends React.Component {
     await Auth.login(this.state);
   }
 
-  async handleChange(e) {
+  handleChange(e) {
     this.setState({
       [e.target.name]: e.target.value,
     });
@@ -30,7 +30,19 @@ export default class Login extends React.Component {
     return (
       <Row type="flex" justify="center">
         <Col span={6}>
-          <Form onSubmit={this.handleSubmit} className="login-form">
+          <Form
+            onSubmit={this.handleSubmit}
+            className="login-form"
+            data-test="login-form"
+            style={{ textAlign: 'center' }}
+          >
+            <img
+              style={{ maxWidth: '100px' }}
+              alt="logo"
+              className="logo-img"
+              data-test="login-logo"
+              src="https://s3.amazonaws.com/employee-portal/unilever+pics/unilever.jpg"
+            />
             <Form.Item>
               <Input
                 onChange={this.handleChange}

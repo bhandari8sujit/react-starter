@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import 'antd/dist/antd.css';
-import Login from './components/Login';
-import Test from './components/Test';
+import Login from './components/Login/Login';
+import Random from './components/Random/Random';
 
 const App = () => {
   return (
@@ -10,7 +10,7 @@ const App = () => {
       <Router>
         <Switch>
           <Route path="/" exact component={Login} />
-          <Route path="/test" exact component={Test} />
+          <Route path="/test" exact component={Random} />
         </Switch>
       </Router>
     </div>
